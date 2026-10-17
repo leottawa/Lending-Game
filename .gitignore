@@ -1,0 +1,7 @@
+# Course data and our offers stay off GitHub: the repo is public and other teams could see them.
+data/
+output/
+*.csv
+__pycache__/
+.DS_Store
+.ipynb_checkpoints/
