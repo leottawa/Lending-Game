@@ -1,7 +1,13 @@
-# Course data and our offers stay off GitHub: the repo is public and other teams could see them.
-data/
-output/
-*.csv
+# Python and OS clutter
 __pycache__/
 .DS_Store
 .ipynb_checkpoints/
+
+# Regenerable caches and LaTeX build files
+*.npz
+report/*.aux
+report/*.log
+report/*.out
+
+# Output of an earlier script version that was never submitted
+submission_v5.csv

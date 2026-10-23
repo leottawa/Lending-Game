@@ -1,0 +1,17 @@
+{'assumed': 0.0, 'median rate': np.float64(0.8989), 'share >= 90%': np.float64(0.30825), 'share < 50%': np.float64(0.0), 'true 0.0': np.float64(129.5), 'true 0.25': np.float64(77.8), 'true 0.5': np.float64(39.3), 'true 0.75': np.float64(13.9)}
+{'assumed': 0.1, 'median rate': np.float64(0.8989), 'share >= 90%': np.float64(0.29162), 'share < 50%': np.float64(0.0), 'true 0.0': np.float64(129.6), 'true 0.25': np.float64(77.9), 'true 0.5': np.float64(39.4), 'true 0.75': np.float64(13.9)}
+{'assumed': 0.25, 'median rate': np.float64(0.8679), 'share >= 90%': np.float64(0.14648), 'share < 50%': np.float64(0.0), 'true 0.0': np.float64(121.8), 'true 0.25': np.float64(78.0), 'true 0.5': np.float64(44.2), 'true 0.75': np.float64(20.3)}
+{'assumed': 0.35, 'median rate': np.float64(0.6759), 'share >= 90%': np.float64(0.0013), 'share < 50%': np.float64(0.00067), 'true 0.0': np.float64(94.0), 'true 0.25': np.float64(74.7), 'true 0.5': np.float64(58.0), 'true 0.75': np.float64(43.6)}
+{'assumed': 0.5, 'median rate': np.float64(0.5479), 'share >= 90%': np.float64(0.0007), 'share < 50%': np.float64(0.00918), 'true 0.0': np.float64(73.9), 'true 0.25': np.float64(67.8), 'true 0.5': np.float64(62.2), 'true 0.75': np.float64(56.9)}
+{'assumed': 0.75, 'median rate': np.float64(0.5179), 'share >= 90%': np.float64(0.00017), 'share < 50%': np.float64(0.11807), 'true 0.0': np.float64(64.8), 'true 0.25': np.float64(63.0), 'true 0.5': np.float64(61.2), 'true 0.75': np.float64(59.4)}
+         median rate  share >= 90%  share < 50%  true 0.0  true 0.25  true 0.5  true 0.75  max regret  mean over true
+assumed                                                                                                              
+0.00           0.899         0.308        0.000     129.5       77.8      39.3       13.9        45.5          65.125
+0.10           0.899         0.292        0.000     129.6       77.9      39.4       13.9        45.5          65.200
+0.25           0.868         0.146        0.000     121.8       78.0      44.2       20.3        39.1          66.075
+0.35           0.676         0.001        0.001      94.0       74.7      58.0       43.6        35.6          67.575
+0.50           0.548         0.001        0.009      73.9       67.8      62.2       56.9        55.7          65.200
+0.75           0.518         0.000        0.118      64.8       63.0      61.2       59.4        64.8          62.100
+K=250, assumed 0.25: stationary 120.8M
+K=1000, assumed 0.25: stationary 122.3M
+exit 0

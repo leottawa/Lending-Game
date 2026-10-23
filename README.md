@@ -1,30 +1,34 @@
-# Lending Game — HEC MSc DSAIB, Introduction to Finance for Data Scientists
+# Lending Game: Team HECredit (Lender 2)
 
-We are **Lender 2**. `stage1_pricing.py` is the team's Stage 1 script (fintech name: "Lender 2: Judgment Day"). It fits a
-spline GAM default model on all three signals, integrates over competitors' unseen signals and pricing
-behaviour to correct for the winner's curse, and offers the profit-maximising rate per applicant.
+HEC Paris, MSc Data Science & AI for Business 2026-27, *Introduction to Finance for Data Scientists*.
+Team: Leo Burtin, Ion Goursaud de Merlis, Scott Mayette, Julia Rouzou.
 
-## Run Stage 1
+We price 10,000-euro consumer loans against two rival lenders who see private signals we do not.
+Round 1: 2nd of 12 lenders, EUR 62.5M profit, 38.4% market share. Round 2 submitted on 23 October 2026.
+The method and results are in the report, [`report/HECredit_Stage2_report.pdf`](report/HECredit_Stage2_report.pdf).
 
-1. Put the two course files next to the script, keeping their names:
-   - `PastLoans.csv`
-   - `NewApplications_Lender2_Round1.csv`
-2. Run it (under a minute on a laptop):
+## Contents
 
-   ```bash
-   python3 stage1_pricing.py
-   ```
+| Path | What it is |
+| --- | --- |
+| `stage1_pricing.py` | Round 1 pricing: spline GAM default model on all three signals, expected profit integrated over the rivals' unseen signals and a prior on their pricing |
+| `stage2/stage2_pricing.py` | Round 2 model: best response to the rival offers observed in Round 1, winner's-curse regression on those offers, cross-fitted backtest (`--validate`) |
+| `stage2/ch_model.py` | Level-k (cognitive hierarchy) prediction of the rivals' reaction, backtest of Table 2, and the submitted Round 2 offers (`--final`) |
+| `stage2/analysis/` | Round 1 diagnosis and robustness scripts, with the logs of the backtests |
+| `report/` | Stage 2 report: LaTeX source, PDF and figure |
+| `submissions/` | Offers actually submitted: Round 1 (rebuilt from the diagnostic file) and Round 2 |
+| `data/` | Course data (simulated): past loans, applications for both rounds, Round 1 diagnostic file |
 
-3. It writes `Lender2_Round1_offers.csv` with columns `id` and `rate` (0.12 = 12%, empty = no offer).
+## Reproduce
 
-Data files and submissions are kept out of git by `.gitignore`.
+Requirements: Python 3 with pandas, numpy, scipy, scikit-learn (matplotlib for the figure). Run from the repository root.
 
-## Stage 1 deliverables (due 17 October, 24:00, by email to hombert@hec.fr)
+```bash
+python3 stage1_pricing.py data                     # Round 1 offers, written to data/
+python3 stage2/stage2_pricing.py data --validate   # cross-fitted backtest on Round 1
+python3 stage2/ch_model.py stage2 data             # level-k prediction and the backtest in Table 2
+python3 stage2/ch_model.py stage2 data --final     # Round 2 offers, written to data/
+```
 
-- The fintech's name.
-- `Lender2_Round1_offers.csv`.
-
-## Stage 2 reminder
-
-The script reads `NewApplications_Lender2_Round1.csv` by name. For Round 2, change `NEW_FILE`
-(and `OUT_FILE`) at the top of the script, otherwise it silently reuses the Round 1 file.
+The Stage 1 script reproduces the submitted Round 1 rates up to small numerical differences between library versions.
+To rebuild the report, run `pdflatex HECredit_Stage2_report.tex` twice inside `report/`.

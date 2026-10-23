@@ -26,7 +26,7 @@ Method
    PDs get a small safety margin (+0.05 on the log-odds) against model error, and every rate is
    shaded by 0.0001 to win ties against round-number offers.
 
-Fintech name: Lender 2: Judgment Day  ("Hasta la vista, default.")
+Fintech name: HECredit
 """
 import sys
 import numpy as np

@@ -1,0 +1,17 @@
+default model fitted, Round 1 scored (4s)
+out-of-fold log-loss: our PD alone 0.29264 | with competitor offers 0.29016
+  Stage 1 offers (submitted): done in 0s
+  Stage 1, 97.89% quotes -> 91.89%: done in 0s
+  Stage 2, ADAPT_PROB=0.0: done in 4s
+  Stage 2, ADAPT_PROB=0.25: done in 12s
+  Stage 2, ADAPT_PROB=0.5: done in 11s
+  Stage 2, ADAPT_PROB=0.25, no winner's curse: done in 13s
+                                             offers  profit if adapt=0.0 (M EUR)  profit if adapt=0.25 (M EUR)  profit if adapt=0.5 (M EUR)
+policy                                                                                                                                     
+Stage 1 offers (submitted)                    99972                        62.51                         38.52                        21.34
+Stage 1, 97.89% quotes -> 91.89%              99972                        76.40                         48.35                        27.63
+Stage 2, ADAPT_PROB=0.0                      100000                       129.54                         77.76                        39.27
+Stage 2, ADAPT_PROB=0.25                     100000                       121.80                         77.99                        44.24
+Stage 2, ADAPT_PROB=0.5                      100000                        73.87                         67.80                        62.17
+Stage 2, ADAPT_PROB=0.25, no winner's curse  100000                       119.96                         78.04                        45.41
+exit 0
